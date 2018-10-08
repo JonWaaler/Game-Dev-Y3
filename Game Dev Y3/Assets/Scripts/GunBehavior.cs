@@ -77,6 +77,7 @@ public class GunBehavior : MonoBehaviour
                 if (Bullets[i].activeInHierarchy == false)
                 {
                     // Play shot sound
+                    Gun_Shot.Play();
                     // Play shot anim
                     // Play shot particles
                     Bullets[i].SetActive(true);
