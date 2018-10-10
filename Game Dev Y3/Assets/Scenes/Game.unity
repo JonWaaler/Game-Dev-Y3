@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2586,6 +2586,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114205425415145638, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: A_Button_PNum
+      value: AButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205425415145638, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: AButton_PNum
+      value: AButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54735451543723886, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205425415145638, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: jumpVelocity
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205425415145638, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: fallMultiplier
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6937e222beae01241b418ff3da70a355, type: 2}
   m_IsPrefabAsset: 0
@@ -2781,6 +2806,21 @@ Prefab:
       value: 
       objectReference: {fileID: 198596849265613488, guid: 45b1a9ef6177e79429dc87f9c5848c7f,
         type: 2}
+    - target: {fileID: 114205425415145638, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: AButton_PNum
+      value: AButton2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205425415145638, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: fallMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114205425415145638, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: jumpVelocity
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6937e222beae01241b418ff3da70a355, type: 2}
   m_IsPrefabAsset: 0
