@@ -33,7 +33,7 @@ public class WinDetection : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         // if this player collides with the bullet
-        if(other.gameObject.tag == "Bullet")
+        if(other.gameObject.tag == "Bullet" && gameObject.tag != ("Wall"))
         {
             string temp = gameObject.name;
             temp = temp.Substring(temp.Length-1);
