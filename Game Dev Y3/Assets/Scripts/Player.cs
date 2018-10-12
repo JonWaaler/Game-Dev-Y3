@@ -16,10 +16,11 @@ public class Player : MonoBehaviour {
 	[Range(1, 10)]
 	public float jumpVelocity;
 
+	public Rigidbody rb;
 
-	// Use this for initialization
-	void Start () {
-
+	void Awake ()
+	{
+		Rigidbody rb = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
@@ -30,15 +31,12 @@ public class Player : MonoBehaviour {
 
 		inputVector = new Vector3(xVel, 0, zvel);
 
-		//print("X_Vel: "+ xVel);
-		//print("z_Vel: "+ zvel);
-
 		if (xVel != 0 || zvel != 0)
 		{
-			GetComponent<Rigidbody>().AddForce(inputVector.normalized * speed);
+			rb.AddForce(inputVector.normalized * speed);
 		}
 
-		GetComponent<Rigidbody>().velocity = new Vector3 (speed * xVel, GetComponent<Rigidbody>().velocity.y, speed * zvel);
+		rb.velocity = new Vector3 (speed * xVel, rb.velocity.y, speed * zvel);
 
 		Vector3 playerDirection = Vector3.right * Input.GetAxisRaw(H_RS_PNum) + Vector3.forward * -Input.GetAxisRaw(V_RS_PNum);
 		if(playerDirection.sqrMagnitude > 0.0f)
@@ -49,22 +47,25 @@ public class Player : MonoBehaviour {
 
         }
 
-		if (Input.GetButtonDown(AButton_PNum) && GetComponent<Rigidbody>().velocity.y == 0)
+		// Jumping (Code is not optimal for input from p1 or p2)
+		if (Input.GetButtonDown(AButton_PNum) && rb.velocity.y < 0.00001 && GetComponent<Object>().name == "Player Parent 1")
 		{
-			GetComponent<Rigidbody>().velocity = Vector3.up * jumpVelocity;
-		}
-		if (GetComponent<Rigidbody>().velocity.y < 0)
-		{
-			GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-		}
-		else if (GetComponent<Rigidbody>().velocity.y > 0 && !Input.GetButton(AButton_PNum))
-		{
-			GetComponent<Rigidbody>().velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+			rb.velocity = Vector3.up * jumpVelocity;
 		}
 
-	}	
-	void FixedUpdate()
-	{
-		
+		if (Input.GetButtonDown(AButton_PNum) && rb.velocity.y < 0.00001 && GetComponent<Object>().name == "Player Parent 2")
+		{
+			rb.velocity = Vector3.up * jumpVelocity;
+		}
+
+		if (rb.velocity.y < 0)
+		{
+			rb.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+		}
+		else if (rb.velocity.y > 0 && !Input.GetButton(AButton_PNum))
+		{
+			rb.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+		}
+
 	}
 }
