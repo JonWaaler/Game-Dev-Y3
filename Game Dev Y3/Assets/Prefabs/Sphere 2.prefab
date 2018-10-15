@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 
-  speed: 25
+  speed: 40
   Damage: 0
 --- !u!135 &135704254660387690
 SphereCollider:

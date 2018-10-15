@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Player_1 Bullet
   - Player_2 Bullet
+  - MovableObj
   layers:
   - Default
   - TransparentFX

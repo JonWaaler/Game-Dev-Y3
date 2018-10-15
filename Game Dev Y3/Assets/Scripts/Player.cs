@@ -53,10 +53,10 @@ public class Player : MonoBehaviour {
 			rb.velocity = Vector3.up * jumpVelocity;
 		}
 
-		if (Input.GetButtonDown(AButton_PNum) && rb.velocity.y < 0.00001 && GetComponent<Object>().name == "Player Parent 2")
-		{
-			rb.velocity = Vector3.up * jumpVelocity;
-		}
+		// if (Input.GetButtonDown(AButton_PNum) && rb.velocity.y < 0.00001 && GetComponent<Object>().name == "Player Parent 2")
+		// {
+		// 	rb.velocity = Vector3.up * jumpVelocity;
+		// }
 
 		if (rb.velocity.y < 0)
 		{
@@ -68,4 +68,15 @@ public class Player : MonoBehaviour {
 		}
 
 	}
+
+	
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "MovableObj"){
+			transform.SetParent(other.transform);
+        }else{
+			transform.SetParent(null);
+
+		}
+    }
 }
