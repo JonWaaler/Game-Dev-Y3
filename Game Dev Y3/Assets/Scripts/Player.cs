@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 	private float xFire;
 	private float yFire;
 	private Vector3 inputVector;
+	private bool isGrounded;
 
 	public float speed;
 	public string H_LS_PNum, V_LS_PNum, H_RS_PNum, V_RS_PNum, AButton_PNum;
@@ -47,16 +48,10 @@ public class Player : MonoBehaviour {
 
         }
 
-		// Jumping (Code is not optimal for input from p1 or p2)
-		if (Input.GetButtonDown(AButton_PNum) && rb.velocity.y < 0.00001 && GetComponent<Object>().name == "Player Parent 1")
+		if (Input.GetButtonDown(AButton_PNum) && isGrounded)
 		{
-			rb.velocity = Vector3.up * jumpVelocity;
+			rb.velocity = new Vector3(0, jumpVelocity, 0);
 		}
-
-		// if (Input.GetButtonDown(AButton_PNum) && rb.velocity.y < 0.00001 && GetComponent<Object>().name == "Player Parent 2")
-		// {
-		// 	rb.velocity = Vector3.up * jumpVelocity;
-		// }
 
 		if (rb.velocity.y < 0)
 		{
@@ -72,11 +67,27 @@ public class Player : MonoBehaviour {
 	
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "MovableObj"){
+        if(other.gameObject.tag == "MovableObj")
+		{
 			transform.SetParent(other.transform);
-        }else{
+        }
+		else
+		{
 			transform.SetParent(null);
-
 		}
     }
+
+	void OnCollisionStay(Collision other)
+	{
+		if (other.gameObject.tag == "Floor")
+		{
+			isGrounded = true;
+			Debug.Log("true");
+		}
+		else
+		{
+			isGrounded = false;
+			Debug.Log("false");
+		}
+	}
 }
