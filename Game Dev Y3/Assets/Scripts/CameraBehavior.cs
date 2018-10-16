@@ -14,6 +14,23 @@ public class CameraBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        int count = 0;
+        int i;
+        for (i = 0; i < players.Count; i++)
+        {
+            if(players[i] == null)
+            {
+                print("Player Might have been Destroyed?");
+                count++;
+            }
+        }
+        if(count > 0)
+        {
+
+        }
+
+
+
         switch (players.Count)
         {
             case 1:

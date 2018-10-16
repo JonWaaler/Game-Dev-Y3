@@ -8,7 +8,7 @@ public class WinDetection : MonoBehaviour {
 
     private float health = 100F;
     private Slider slider_PlayerHealth;
-
+    private CameraBehavior cameraBehavior;
     // Attach to the player.
     private void Start()
     {
@@ -28,6 +28,7 @@ public class WinDetection : MonoBehaviour {
         {
             slider_PlayerHealth = GameObject.Find("Player 4 - Health").GetComponent<Slider>();
         }
+        cameraBehavior = GameObject.FindObjectOfType<CameraBehavior>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -48,7 +49,10 @@ public class WinDetection : MonoBehaviour {
 
                 print("Made it here");
                 if (slider_PlayerHealth.value <= 0.2f)
+                {
+                    cameraBehavior.players.Remove(transform);
                     Destroy(gameObject);
+                }
             }
 
         }
