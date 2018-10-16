@@ -63,7 +63,9 @@ public class Ability : MonoBehaviour {
     {
         float current = 0.0f;
         string gameObjTag = gameObject.tag;
-        while(current <= lerpTime)
+//        Color originColor =  <Material>().color;
+  //      gameObject.GetComponentInChildren<Material>().color = Color.green;
+        while (current <= lerpTime)
         {
             gameObject.tag = "Wall";
             current = current + Time.deltaTime;
@@ -71,6 +73,7 @@ public class Ability : MonoBehaviour {
             GetComponent<Rigidbody>().MovePosition(Vector3.Lerp(origin, target, percent));
             yield return null;
         }
+//        gameObject.GetComponentInChildren<Material>().color = originColor;
         gameObject.tag = gameObjTag;
     }
 

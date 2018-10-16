@@ -2892,11 +2892,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c105fcd9a12247043910a40b7b2d1a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionObj: {fileID: 1938251271754946, guid: e58df1945e94c3c4e8195045a486e08d,
+  collisionObj: {fileID: 1686643629925024, guid: e58df1945e94c3c4e8195045a486e08d,
     type: 2}
   XButton_PNum: XButton1
   abilCool: 4
   speed: 1
+--- !u!114 &1854359609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1854359600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f45e1290ed0df44e8c5e89eb15a06a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionObj: {fileID: 1686643629925024, guid: e58df1945e94c3c4e8195045a486e08d,
+    type: 2}
+  RB_PNum: RB1
+  abilCool: 3
+  speed: 13
+  distance: 10
+  hookReelSpd: 13
 --- !u!1 &1867935437
 GameObject:
   m_ObjectHideFlags: 0

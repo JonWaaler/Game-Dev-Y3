@@ -10,7 +10,7 @@ public class Ability3 : MonoBehaviour
 
     public string XButton_PNum;
     public float abilCool = 1.0f;
-    public float speed = 5.0f;
+    public float speed = 3.0f;
     // Use this for initialization
 
     private float nextAbil;
@@ -20,7 +20,11 @@ public class Ability3 : MonoBehaviour
     {
         sphereCol = Instantiate(collisionObj);
         sphereCol.transform.position = transform.position;
+        sphereCol.name = "teleporter";
         sphereCol.GetComponentInChildren<MeshRenderer>().enabled = false;
+        sphereCol.GetComponent<Collider>().enabled = false;
+        sphereCol.GetComponent<SphereCollisionCheck>().playerThrow = transform.gameObject;
+
     }
 
     // Update is called once per frame
@@ -43,25 +47,34 @@ public class Ability3 : MonoBehaviour
     {
         sphereCol.transform.position = origin;
         sphereCol.GetComponentInChildren<MeshRenderer>().enabled = true;
+        sphereCol.GetComponent<Collider>().enabled = true;
+
         Vector3 initalFoward = transform.forward;
 
         while (XButtonPressed  == true)
         {
             nextAbil += Time.deltaTime;
-            sphereCol.transform.position += (initalFoward * moveSpeed * Time.deltaTime);
+            sphereCol.transform.position += (initalFoward * moveSpeed * Time.deltaTime * 20);
             yield return null;
         }
-        sphereCol.GetComponentInChildren<MeshRenderer>().enabled = false;
+
+        transform.position = sphereCol.transform.position; // comment this line and uncoment below for non wall teleportation
+        
+        /*
         if (sphereCol.GetComponent<SphereCollisionCheck>().isCollision == true)
         {
             nextAbil = Time.time;
-            print("Teleportation Failed ");
             sphereCol.transform.position = transform.position;
         }
         else if(sphereCol.GetComponent<SphereCollisionCheck>().isCollision == false)
         {
             transform.position = sphereCol.transform.position;
-            print("Teleportation Success ");
         }
+        */
+
+        sphereCol.GetComponentInChildren<MeshRenderer>().enabled = false;
+        sphereCol.GetComponent<Collider>().enabled = false;
+
+
     }
 }
