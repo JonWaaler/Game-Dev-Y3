@@ -6,7 +6,7 @@ public class ShaderSetVars : MonoBehaviour {
 
     public Material mat;
     public AnimationCurve t;
-    private float t_Material = 0;
+    public float t_Material = 0;
 
     // Update is called once per frame
     void Update()

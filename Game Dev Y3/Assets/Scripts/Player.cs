@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+        
 		xVel = Input.GetAxis(H_LS_PNum);
 		zvel = Input.GetAxis(V_LS_PNum);
 
