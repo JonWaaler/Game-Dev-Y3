@@ -2821,6 +2821,12 @@ Prefab:
       propertyPath: jumpVelocity
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114376481256893292, guid: 6937e222beae01241b418ff3da70a355,
+        type: 2}
+      propertyPath: Prefab_Bullet
+      value: 
+      objectReference: {fileID: 1861613144313666, guid: 366df163c2a691547838f621aecefc48,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6937e222beae01241b418ff3da70a355, type: 2}
   m_IsPrefabAsset: 0
@@ -2875,6 +2881,22 @@ MonoBehaviour:
   abilCool: 6.5
   invisTime: 4
   animateTime: 1
+--- !u!114 &1854359608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1854359600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c105fcd9a12247043910a40b7b2d1a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionObj: {fileID: 1938251271754946, guid: e58df1945e94c3c4e8195045a486e08d,
+    type: 2}
+  XButton_PNum: XButton1
+  abilCool: 4
+  speed: 1
 --- !u!1 &1867935437
 GameObject:
   m_ObjectHideFlags: 0

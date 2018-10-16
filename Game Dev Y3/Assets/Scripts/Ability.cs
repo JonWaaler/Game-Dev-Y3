@@ -46,7 +46,7 @@ public class Ability : MonoBehaviour {
                     Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
 
                 }
-
+                    
                 Vector3 hitPoint =  transform.position + (transform.forward * (rollDistance * .8f));
                 StartCoroutine(Roll(transform.position, hitPoint, rollTime));
             }
