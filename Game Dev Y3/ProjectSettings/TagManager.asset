@@ -9,11 +9,8 @@ TagManager:
   - Player_1 Bullet
   - Player_2 Bullet
   - MovableObj
-  - Player_1
-  - Player_2
-  - Player_3
-  - Player_4
   - Floor
+  - Gun
   layers:
   - Default
   - TransparentFX
