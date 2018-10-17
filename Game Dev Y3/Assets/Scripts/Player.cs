@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionStay(Collision other)
 	{
-		if (other.gameObject.tag == "Floor")
+		if (other.gameObject.tag == "Floor" || other.gameObject.tag == "MovableObj")
 		{
 			isGrounded = true;
 			Debug.Log("true");

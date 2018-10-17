@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 36539554}
   - component: {fileID: 36539553}
   - component: {fileID: 36539556}
+  - component: {fileID: 36539557}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Floor
@@ -276,6 +277,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrioryType: 0
+  player2_Health: {fileID: 0}
+--- !u!114 &36539557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36539551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f47151a80f9b6047875f321dcb0107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &83549453
 Prefab:
   m_ObjectHideFlags: 0
@@ -10642,6 +10655,7 @@ GameObject:
   - component: {fileID: 602124799}
   - component: {fileID: 602124798}
   - component: {fileID: 602124797}
+  - component: {fileID: 602124801}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Floor
@@ -10716,6 +10730,17 @@ Transform:
   m_Father: {fileID: 753912542}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &602124801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602124796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f47151a80f9b6047875f321dcb0107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &610222563
 GameObject:
   m_ObjectHideFlags: 0
@@ -10727,6 +10752,7 @@ GameObject:
   - component: {fileID: 610222566}
   - component: {fileID: 610222565}
   - component: {fileID: 610222564}
+  - component: {fileID: 610222568}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Floor
@@ -10801,6 +10827,17 @@ Transform:
   m_Father: {fileID: 753912542}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &610222568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 610222563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f47151a80f9b6047875f321dcb0107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &686756033
 GameObject:
   m_ObjectHideFlags: 0
@@ -11086,11 +11123,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
     - target: {fileID: 4353393196291642, guid: 1241d6ce99a01e849af5ad3dce27bad1, type: 2}
       propertyPath: m_LocalScale.x
-      value: 9.607067
+      value: 10.02
       objectReference: {fileID: 0}
     - target: {fileID: 4353393196291642, guid: 1241d6ce99a01e849af5ad3dce27bad1, type: 2}
       propertyPath: m_LocalScale.z
-      value: 7.0752006
+      value: 10.96
       objectReference: {fileID: 0}
     - target: {fileID: 114884413089088114, guid: 1241d6ce99a01e849af5ad3dce27bad1,
         type: 2}
@@ -12243,6 +12280,7 @@ GameObject:
   - component: {fileID: 1195086221}
   - component: {fileID: 1195086220}
   - component: {fileID: 1195086219}
+  - component: {fileID: 1195086223}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Floor
@@ -12317,6 +12355,17 @@ Transform:
   m_Father: {fileID: 753912542}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &1195086223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1195086218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f47151a80f9b6047875f321dcb0107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1209562320
 GameObject:
   m_ObjectHideFlags: 0
@@ -17541,6 +17590,7 @@ GameObject:
   - component: {fileID: 1414937730}
   - component: {fileID: 1414937729}
   - component: {fileID: 1414937728}
+  - component: {fileID: 1414937732}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Floor
@@ -17615,6 +17665,17 @@ Transform:
   m_Father: {fileID: 753912542}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 45.000004, z: 0}
+--- !u!114 &1414937732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414937727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f47151a80f9b6047875f321dcb0107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1417814882 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1690553077726120, guid: 6937e222beae01241b418ff3da70a355,
@@ -17980,6 +18041,7 @@ GameObject:
   - component: {fileID: 1521639240}
   - component: {fileID: 1521639239}
   - component: {fileID: 1521639238}
+  - component: {fileID: 1521639242}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Floor
@@ -18054,6 +18116,17 @@ Transform:
   m_Father: {fileID: 753912542}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+--- !u!114 &1521639242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1521639237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f47151a80f9b6047875f321dcb0107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1553453392
 GameObject:
   m_ObjectHideFlags: 0
@@ -18197,7 +18270,7 @@ GameObject:
   - component: {fileID: 1660795430}
   - component: {fileID: 1660795429}
   - component: {fileID: 1660795428}
-  - component: {fileID: 1660795427}
+  - component: {fileID: 1660795433}
   m_Layer: 0
   m_Name: Movable Object - Platform1
   m_TagString: MovableObj
@@ -18205,22 +18278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &1660795427
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 54020892444230326, guid: 3bbc655e05cf6574d8cdd4f20a90aeed,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1660795426}
-  serializedVersion: 2
-  m_Mass: 5000
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!114 &1660795428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18311,6 +18368,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+--- !u!114 &1660795433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1660795426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f47151a80f9b6047875f321dcb0107c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1662097181
 Prefab:
   m_ObjectHideFlags: 0
@@ -18548,7 +18616,7 @@ GameObject:
   - component: {fileID: 1671343266}
   m_Layer: 0
   m_Name: Movable Object - Platform2
-  m_TagString: Wall
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
