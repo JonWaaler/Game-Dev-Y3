@@ -8,7 +8,7 @@ public class TerritoryBehavior : MonoBehaviour {
     public enum TerritoryType { Damage, Regen };
     public TerritoryType terrioryType;
     private Slider player1_Health;
-    private Slider player2_Health;
+    public Slider player2_Health;
 
     void Start()
     {
@@ -26,13 +26,13 @@ public class TerritoryBehavior : MonoBehaviour {
                 if (collision.transform.GetChild(1).tag == "Gun")
                 {
                     collision.transform.GetChild(1).GetComponent<GunBehavior>().Damage = collision.transform.GetChild(1).GetComponent<GunBehavior>().Damage * 2;
+                    print("GIVE DAMAGE");
                 }
                 else
                     print("<color = red>ERROR: Set " + collision.gameObject.name + "'s TAG to Gun./n Or");
             }
         }
     }
-
 
     private void OnCollisionStay(Collision collision)
     {

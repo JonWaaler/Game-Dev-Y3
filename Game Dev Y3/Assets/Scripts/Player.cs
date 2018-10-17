@@ -5,10 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 	private float xVel;
 	private float zvel;
-	private float xFire;
-	private float yFire;
 	private Vector3 inputVector;
-	private bool isGrounded;
+	public bool isGrounded;
 
 	public float speed;
 	public string H_LS_PNum, V_LS_PNum, H_RS_PNum, V_RS_PNum, AButton_PNum;
@@ -44,7 +42,7 @@ public class Player : MonoBehaviour {
 		{
             //playerDirection.z += 45;
 			transform.rotation = Quaternion.LookRotation(playerDirection, Vector3.up) ;
-            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+            //transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
 
         }
 
@@ -84,10 +82,14 @@ public class Player : MonoBehaviour {
 			isGrounded = true;
 			Debug.Log("true");
 		}
-		else
-		{
-			isGrounded = false;
-			Debug.Log("false");
-		}
 	}
+
+	// void OnCollisioneExit(Collision other)
+	// {
+	// 	if (other.gameObject.tag == "Floor")
+	// 	{
+	// 		isGrounded = false;
+	// 		Debug.Log("false");
+	// 	}
+	// }
 }
