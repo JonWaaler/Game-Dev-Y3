@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class WinDetection : MonoBehaviour {
 
 
+
     private float health = 100F;
     private Slider slider_PlayerHealth;
     private CameraBehavior cameraBehavior;
@@ -31,6 +32,11 @@ public class WinDetection : MonoBehaviour {
         cameraBehavior = GameObject.FindObjectOfType<CameraBehavior>();
     }
 
+    private void Update()
+    {
+        
+    }
+
     void OnTriggerEnter(Collider other)
     {
         // if this player collides with the bullet
@@ -54,7 +60,9 @@ public class WinDetection : MonoBehaviour {
                     Destroy(gameObject);
                 }
             }
-
         }
+
+
+
     }
 }
