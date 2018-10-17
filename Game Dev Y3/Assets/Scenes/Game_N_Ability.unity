@@ -2914,7 +2914,11 @@ MonoBehaviour:
   abilCool: 3
   speed: 13
   distance: 10
-  hookReelSpd: 13
+  hookReelSpd: 1
+  extendHook: 0
+  reelHook: 0
+  nextAbil: 0
+  XButtonPressed: 0
 --- !u!1 &1867935437
 GameObject:
   m_ObjectHideFlags: 0
