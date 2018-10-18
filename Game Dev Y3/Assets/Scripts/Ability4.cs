@@ -9,10 +9,10 @@ public class Ability4 : MonoBehaviour
     GameObject sphereCol;
 
     public string RB_PNum;
-    public float abilCool = 3.0f;
+    public float abilCool = 1.0f;
     public float speed = 13.0f;
-    public float distance = 4.0f;
-    public float hookReelSpd = 1.0f;
+    public float distance = 8.0f;
+    public float hookReelSpd = 0.25f;
 
     public bool extendHook = false;
     public bool reelHook = false;

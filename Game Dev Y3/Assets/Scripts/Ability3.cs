@@ -10,8 +10,8 @@ public class Ability3 : MonoBehaviour
 
     public string XButton_PNum;
     public float abilCool = 1.0f;
-    public float speed = 3.0f;
-    public float distance = 4.0f;
+    public float speed = 6.0f;
+    public float distance = 7.5f;
 
     // Use this for initialization
 
