@@ -105,7 +105,7 @@ public class Ability4 : MonoBehaviour
         }
         else if (grabbed == grabbedObj.player)
         {
-            StartCoroutine(lerpHook(sphereCol.GetComponent<SphereCollisionCheck>().playerHit.transform.position, transform.position, hookReelSpd, sphereCol.GetComponent<SphereCollisionCheck>().playerHit));
+            StartCoroutine(lerpHook(sphereCol.GetComponent<SphereCollisionCheck>().playerHit.transform.position, transform.position + (initalFoward*1.5f), hookReelSpd, sphereCol.GetComponent<SphereCollisionCheck>().playerHit));
             StartCoroutine(lerpHook(sphereCol.transform.position, transform.position, hookReelSpd, sphereCol));
             while (reelHook)
             {

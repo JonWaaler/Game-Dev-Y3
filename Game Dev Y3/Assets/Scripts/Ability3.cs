@@ -11,6 +11,8 @@ public class Ability3 : MonoBehaviour
     public string XButton_PNum;
     public float abilCool = 1.0f;
     public float speed = 3.0f;
+    public float distance = 4.0f;
+
     // Use this for initialization
 
     private float nextAbil;
@@ -50,10 +52,12 @@ public class Ability3 : MonoBehaviour
         sphereCol.GetComponent<Collider>().enabled = true;
 
         Vector3 initalFoward = transform.forward;
-
-        while (XButtonPressed  == true)
+        float current = 0;
+//        while (XButtonPressed  == true)
+           while(current <= distance)
         {
-            nextAbil += Time.deltaTime;
+//            nextAbil += Time.deltaTime;
+            current+= moveSpeed*Time.deltaTime*20;
             sphereCol.transform.position += (initalFoward * moveSpeed * Time.deltaTime * 20);
             yield return null;
         }
