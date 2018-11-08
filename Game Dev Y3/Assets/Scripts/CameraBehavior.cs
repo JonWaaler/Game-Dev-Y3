@@ -34,7 +34,7 @@ public class CameraBehavior : MonoBehaviour {
         switch (players.Count)
         {
             case 1:
-                transform.position = players[0].transform.position;
+                transform.position = players[0].transform.position + new Vector3(0,25,0);
                 break;
             case 2:
                 transform.position = Vector3.Lerp(new Vector3(players[0].transform.position.x, 25, players[0].transform.position.z - z_offset), 

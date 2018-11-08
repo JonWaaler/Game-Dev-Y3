@@ -80,7 +80,6 @@ public class Player : MonoBehaviour {
 		if (other.gameObject.tag == "Floor" || other.gameObject.tag == "MovableObj")
 		{
 			isGrounded = true;
-			Debug.Log("true");
 		}
 	}
 

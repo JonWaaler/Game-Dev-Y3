@@ -9,6 +9,8 @@ public class GameManager_UI : MonoBehaviour {
     // UI Manager for
     public GameObject Restart_Canvus;
     private CameraBehavior cameraBehavior;
+    private float t_delay = 0;
+    public float delay = 3;
 
     private void Start()
     {
@@ -22,8 +24,16 @@ public class GameManager_UI : MonoBehaviour {
     {
         if (cameraBehavior.players.Count <= 1)
         {
-            Restart_Canvus.SetActive(true);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            t_delay += Time.deltaTime;
+
+
+            if(t_delay > delay){
+                //Restart_Canvus.SetActive(true);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
+                t_delay = 0;
+            }
         }
 
     }

@@ -56,6 +56,14 @@ public class WinDetection : MonoBehaviour {
                 print("Made it here");
                 if (slider_PlayerHealth.value <= 0.2f)
                 {
+                    if (gameObject.name == "Player Parent 1")
+                    {
+                        GameObject.Find("_GM").GetComponent<DialogueManagerWrapper>().p2Win = true;
+                    }
+                    else if (gameObject.name == "Player Parent 2")
+                    {
+                        GameObject.Find("_GM").GetComponent<DialogueManagerWrapper>().p1Win = true;
+                    }
                     cameraBehavior.players.Remove(transform);
                     Destroy(gameObject);
                 }
