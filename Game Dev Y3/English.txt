@@ -1,5 +1,5 @@
 SettingsText Settings
 Language Language
-PlayText PlayText
-QuitText QuitText
+PlayText Play
+QuitText Quit
 GameTitle GameTitle
