@@ -24,8 +24,6 @@ public class DialogueManagerWrapper : MonoBehaviour
 
 	void Start()
 	{
-		// game start
-		//startTXT();
 		GameObject.Find("Player 1 Wins").SetActive(false);
 		GameObject.Find("Player 2 Wins").SetActive(false);
 	}
@@ -39,22 +37,6 @@ public class DialogueManagerWrapper : MonoBehaviour
 			p2WinTXT();
 
         int nextEventNum = getNextEvent();
-			debugTEMP = getNextEvent();
-  //      if(nextEventNum != 0)
-  //      {
-  //      print("____________________");
-
-//		Debug.Log(nextEventNum + " : " + delay + " : " + time);
-  //      }
-
-
-        //if (nextEventNum == 3)
-        //{
-        //    GameObject.Find("Player 1 Wins").SetActive(true);
-        //    print("FUCK");
-        //    delay = true;
-        //    Time.timeScale = 0;
-        //}
 
             if (nextEventNum == 1)
 			{
@@ -69,8 +51,6 @@ public class DialogueManagerWrapper : MonoBehaviour
                 GameObject.Find("Canvas_GameUI").transform.Find("Player 1 Wins").gameObject.SetActive(true);
 				delay = true;
 			}
-				
-                //Time.timeScale = 0;
             
 
              if (nextEventNum == 4)
