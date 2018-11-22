@@ -30,8 +30,12 @@ public class GunBehavior : MonoBehaviour
     public GameObject Prefab_Bullet;    // This is a copy of our bullet
     public Transform Emitter;           // Emitter is the spawn point of the bullet
 
+    [Header("ReloadUI")]
+    public UnityEngine.UI.Slider Slider_Reload;
+
     private GameObject player;
-    bool requestReload = false;
+    private bool requestReload = false;
+    [HideInInspector]
     public float t_Reload = 0;
 
     public string RT_PNum;
@@ -98,6 +102,7 @@ public class GunBehavior : MonoBehaviour
         {
             // Play Reload Sound
             // Also play a reload graphic on screen
+
             tempReloading_Str = xButton_PNum;
             print("This: " + tempReloading_Str);
             requestReload = true;
@@ -107,12 +112,18 @@ public class GunBehavior : MonoBehaviour
         {
             t_Reload += Time.deltaTime;
 
+            Slider_Reload.gameObject.SetActive(true);
+            Slider_Reload.transform.parent.position = transform.position;
+            Slider_Reload.value = Mathf.Lerp(0, 1, t_Reload / TimeToReload);
+
             if(t_Reload > TimeToReload)
             {
                 print("Reloaded GM: " + gameObject.transform.parent.gameObject.name);
                 BulletsInMag = MagazineCapacity;
                 requestReload = false;
                 t_Reload = 0;
+                Slider_Reload.value = 0;
+                Slider_Reload.gameObject.SetActive(false);
             }
         }
 
