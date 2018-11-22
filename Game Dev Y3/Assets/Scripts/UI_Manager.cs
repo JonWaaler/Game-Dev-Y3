@@ -66,10 +66,10 @@ public class UI_Manager : MonoBehaviour {
 
             PressA.alpha = fade;
 
-            if (characterselect.activeInHierarchy && Input.GetButtonDown("AButton1"))
-            {
-                SceneManager.LoadScene(1);
-            }
+            // if (characterselect.activeInHierarchy && Input.GetKeyDown("joystick 1 button 0"))
+            // {
+            //     //SceneManager.LoadScene(1);
+            // }
         }
 	}
 
