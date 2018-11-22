@@ -4,45 +4,106 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour {
 
+    public Camera camera; 
     public List<Transform> players;
-    private float z_offset = 15;
+    public Vector3 offset;
+    private Vector3 velocity;
+    public float smoothTime = .5f;
+
+    [Header("Max/Min Ortho size")]
+    public float maxSize = 30;
+    public float minSize = 10;
 
 	// Use this for initialization
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        int count = 0;
-        int i;
-        for (i = 0; i < players.Count; i++)
+
+    // Update is called once per frame
+    private void LateUpdate()
+    {
+        if (players.Count < 1)
+            return;
+
+        Vector3 centerPoint = GetCenterPoint();
+        Vector3 newPosition = centerPoint + offset;
+
+        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+
+        Zoom();
+    }
+
+    void Zoom()
+    {
+        float newZoom = Mathf.Lerp(minSize, maxSize, GetLongestDist() / 30f);
+        newZoom = Mathf.Lerp(camera.orthographicSize, newZoom, Time.deltaTime);
+        camera.orthographicSize = newZoom;
+    }
+
+    Vector3 GetCenterPoint()
+    {
+        if (players.Count == 1)
+            return players[0].position;
+
+        Bounds bounds = new Bounds(players[0].position, Vector3.zero);
+        foreach (Transform player in players)
         {
-            if(players[i] == null)
-            {
-                print("Player Might have been Destroyed?");
-                count++;
-            }
+            bounds.Encapsulate(player.position);
         }
-        if(count > 0)
+
+        return bounds.center;
+    }
+
+    // Returns the width of the bounds
+    float GetLongestDist()
+    {
+        Bounds bounds = new Bounds(players[0].position, Vector3.zero);
+        foreach (Transform player in players)
         {
-
+            bounds.Encapsulate(player.position);
         }
+        return bounds.size.x;
+    }
+
+    void Update () {
 
 
 
-        switch (players.Count)
-        {
-            case 1:
-                transform.position = players[0].transform.position + new Vector3(0,25,0);
-                break;
-            case 2:
-                transform.position = Vector3.Lerp(new Vector3(players[0].transform.position.x, 25, players[0].transform.position.z - z_offset), 
-                                                new Vector3(players[1].transform.position.x, 25, players[1].transform.position.z - z_offset), 
-                                                0.5f);
-                break;
-            default:
-                break;
-        }
+
+
+
+
+
+
+        //int count = 0;
+        //int i;
+        //for (i = 0; i < players.Count; i++)
+        //{
+        //    if(players[i] == null)
+        //    {
+        //        print("Player Might have been Destroyed?");
+        //        count++;
+        //    }
+        //}
+        //if(count > 0)
+        //{
+
+        //}
+
+
+
+        //switch (players.Count)
+        //{
+        //    case 1:
+        //        transform.position = players[0].transform.position + new Vector3(0,25,0);
+        //        break;
+        //    case 2:
+        //        transform.position = Vector3.Lerp(new Vector3(players[0].transform.position.x, 25, players[0].transform.position.z - z_offset), 
+        //                                        new Vector3(players[1].transform.position.x, 25, players[1].transform.position.z - z_offset), 
+        //                                        0.5f);
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 }
