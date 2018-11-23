@@ -20,7 +20,10 @@ public class ShaderSetVars : MonoBehaviour {
             mat.SetFloat("_offset", 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Alpha1)|| 
+            Input.GetKeyDown(KeyCode.Alpha2)|| 
+            Input.GetKeyDown(KeyCode.Alpha3)|| 
+            Input.GetKeyDown(KeyCode.Alpha4))
         {
             t_Material = 0.88f;
         }

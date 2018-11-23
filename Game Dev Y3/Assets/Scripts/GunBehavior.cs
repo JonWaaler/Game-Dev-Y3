@@ -73,7 +73,7 @@ public class GunBehavior : MonoBehaviour
             // Play shot smoke particles
         }
 
-        if ((isShooting) && (t_RateOfFireTimer >= RateOfFire) && (BulletsInMag > 0))
+        if ((isShooting) && (t_RateOfFireTimer >= RateOfFire) && (BulletsInMag > 0) && !requestReload)
         {
             //Then search through bullet list and fire the first inactive
             for (int i = 0; i < BULLET_POOL_SIZE; i++)
@@ -115,7 +115,6 @@ public class GunBehavior : MonoBehaviour
             Slider_Reload.gameObject.SetActive(true);
             Slider_Reload.transform.parent.position = transform.position;
             Slider_Reload.value = Mathf.Lerp(0, 1, t_Reload / TimeToReload);
-
             if(t_Reload > TimeToReload)
             {
                 print("Reloaded GM: " + gameObject.transform.parent.gameObject.name);

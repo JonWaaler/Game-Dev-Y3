@@ -62,7 +62,10 @@ public class CameraBehavior : MonoBehaviour {
         {
             bounds.Encapsulate(player.position);
         }
-        return bounds.size.x;
+        if (bounds.size.x > bounds.size.z)
+            return bounds.size.x;
+        else
+            return bounds.size.z;
     }
 
     void Update () {
