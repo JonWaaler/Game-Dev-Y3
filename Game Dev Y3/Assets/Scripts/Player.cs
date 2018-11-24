@@ -19,7 +19,6 @@ public class Player : MonoBehaviour {
 
 	void Awake ()
 	{
-        groundedRay = new Ray(transform.position, -transform.up);
 		Rigidbody rb = GetComponent<Rigidbody>();
     }
 	
@@ -48,11 +47,14 @@ public class Player : MonoBehaviour {
         }
 
         // isGrounded detection
-
-        if (Physics.Raycast(groundedRay, 3))
+        groundedRay = new Ray(transform.position, -transform.up);
+        RaycastHit hit;
+        if (Physics.Raycast(groundedRay, out hit, .75f))
         {
-            print("Hit");
-            Debug.DrawRay(groundedRay.origin, groundedRay.direction * 3);
+
+            print("Hit:"+hit.transform.gameObject.name);
+            Debug.DrawRay(groundedRay.origin, groundedRay.direction * 2);
+            if(hit.transform.tag == "Floor" || hit.transform.tag == "MovableObj")
             isGrounded = true;
         }
         else
