@@ -7,6 +7,7 @@ public class WinDetection : MonoBehaviour {
     private float health = 100F;
     private Slider slider_PlayerHealth;
     private CameraBehavior cameraBehavior;
+    public ParticleSystem Particles_Blood;
     // Attach to the player.
     private void Start()
     {
@@ -47,6 +48,11 @@ public class WinDetection : MonoBehaviour {
             {
                 slider_PlayerHealth.value -= other.GetComponent<Bullet>().Damage;
                 print("<color=green>Player " + other.GetComponent<Bullet>().ID + " did " + other.GetComponent<Bullet>().Damage + " Damage</color>");
+
+                // Spawn blood, set pos to bullet pos
+                ParticleSystem bloodInst = Instantiate<ParticleSystem>(Particles_Blood);
+                bloodInst.transform.position = other.transform.position;
+                Destroy(bloodInst, 35);
 
                 //print("Made it here");
                 if (slider_PlayerHealth.value <= 0.1f) //*was 0.2*
