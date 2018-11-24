@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WinDetection : MonoBehaviour {
-
-
-
     private float health = 100F;
     private Slider slider_PlayerHealth;
     private CameraBehavior cameraBehavior;
@@ -48,16 +45,6 @@ public class WinDetection : MonoBehaviour {
 
             if (other.gameObject.GetComponent<Bullet>().ID != temp)
             {
-                print("_____SHOT_____");
-                //Debug.Log("PLAYER ID:" + temp, gameObject);
-                //Debug.Log("BULLET ID:" + other.gameObject.GetComponent<Bullet>().ID, other.gameObject);
-                //Debug.Log("Slider ->" + gameObject.name, slider_PlayerHealth);
-
-
-                // This means our bullet came from another player
-
-
-
                 slider_PlayerHealth.value -= other.GetComponent<Bullet>().Damage;
                 print("<color=green>Player " + other.GetComponent<Bullet>().ID + " did " + other.GetComponent<Bullet>().Damage + " Damage</color>");
 
@@ -76,8 +63,7 @@ public class WinDetection : MonoBehaviour {
                     Destroy(gameObject);
                 }
             }
-            else
-                print("No Dmg taken");
+            
         }
     }
 }

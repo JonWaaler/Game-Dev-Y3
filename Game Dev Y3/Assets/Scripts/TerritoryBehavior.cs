@@ -7,10 +7,10 @@ public class TerritoryBehavior : MonoBehaviour {
 
     public enum TerritoryType { Damage, Regen };
     public TerritoryType terrioryType;
-    public Slider player1_Health;
-    public Slider player2_Health;
-    public Slider player3_Health;
-    public Slider player4_Health;
+    private Slider player1_Health;
+    private Slider player2_Health;
+    private Slider player3_Health;
+    private Slider player4_Health;
 
     void Start()
     {
@@ -40,21 +40,17 @@ public class TerritoryBehavior : MonoBehaviour {
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.name == "Player Parent 1")
-        {
             player1_Health.value += Time.deltaTime;
-        }
+
         if (collision.gameObject.name == "Player Parent 2")
-        {
             player2_Health.value += Time.deltaTime;
-        }
+
         if (collision.gameObject.name == "Player Parent 3")
-        {
             player3_Health.value += Time.deltaTime;
-        }
+
         if (collision.gameObject.name == "Player Parent 4")
-        {
             player4_Health.value += Time.deltaTime;
-        }
+
     }
 
 

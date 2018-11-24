@@ -23,11 +23,12 @@ public class DialogueManagerWrapper : MonoBehaviour
 	[DllImport(DLL_NAME)]
 	private static extern int getNextEvent();
 
-	void Start()
-	{
-		GameObject.Find("Player 1 Wins").SetActive(false);
-		GameObject.Find("Player 2 Wins").SetActive(false);
-	}
+    void Start()
+    {
+        print("Player 1/2 Wins should be already false...");
+        //GameObject.Find("Player 1 Wins").SetActive(false);
+        //GameObject.Find("Player 2 Wins").SetActive(false);
+    }
 	
 	void Update () {
         // if game end
