@@ -30,7 +30,6 @@ public class TerritoryBehavior : MonoBehaviour {
                 if (collision.transform.GetChild(1).tag == "Gun")
                 {
                     collision.transform.GetChild(1).GetComponent<GunBehavior>().Damage = collision.transform.GetChild(1).GetComponent<GunBehavior>().Damage * 2;
-                    print("GIVE DAMAGE");
                 }
                 else
                     print("<color = red>ERROR: Set " + collision.gameObject.name + "'s TAG to Gun./n Or");

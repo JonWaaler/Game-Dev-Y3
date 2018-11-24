@@ -55,7 +55,7 @@ public class GunBehavior : MonoBehaviour
             Bullets.Add(myInstance);
             myInstance.GetComponent<Bullet>().Damage = Damage;
             myInstance.GetComponent<Bullet>().ID = RT_PNum.Substring(RT_PNum.Length-1);
-
+            Debug.Log("Bullet ID:" + RT_PNum.Substring(RT_PNum.Length - 1), myInstance);
         }
     }
 
@@ -104,7 +104,7 @@ public class GunBehavior : MonoBehaviour
             // Also play a reload graphic on screen
 
             tempReloading_Str = xButton_PNum;
-            print("This: " + tempReloading_Str);
+            //print("This: " + tempReloading_Str);
             requestReload = true;
         }
 
@@ -112,12 +112,14 @@ public class GunBehavior : MonoBehaviour
         {
             t_Reload += Time.deltaTime;
 
+            // Reload UI
             Slider_Reload.gameObject.SetActive(true);
-            Slider_Reload.transform.parent.position = transform.position;
+            Slider_Reload.transform.parent.position = transform.parent.position;
             Slider_Reload.value = Mathf.Lerp(0, 1, t_Reload / TimeToReload);
+
             if(t_Reload > TimeToReload)
             {
-                print("Reloaded GM: " + gameObject.transform.parent.gameObject.name);
+                //print("Reloaded GM: " + gameObject.transform.parent.gameObject.name);
                 BulletsInMag = MagazineCapacity;
                 requestReload = false;
                 t_Reload = 0;

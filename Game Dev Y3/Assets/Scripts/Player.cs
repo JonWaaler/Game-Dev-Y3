@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
         if (Physics.Raycast(groundedRay, out hit, .75f))
         {
 
-            print("Hit:"+hit.transform.gameObject.name);
+
             Debug.DrawRay(groundedRay.origin, groundedRay.direction * 2);
             if(hit.transform.tag == "Floor" || hit.transform.tag == "MovableObj")
             isGrounded = true;

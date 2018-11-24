@@ -13,64 +13,71 @@ public class WinDetection : MonoBehaviour {
     // Attach to the player.
     private void Start()
     {
-        if (gameObject.name == "Player Parent 1")
+        if (gameObject.name == "Player1_Parent 1")
         {
             slider_PlayerHealth = GameObject.Find("Player 1 - Health").GetComponent<Slider>();
         }
-        else if (gameObject.name == "Player Parent 2")
+        else if (gameObject.name == "Player2_Parent 2")
         {
             slider_PlayerHealth = GameObject.Find("Player 2 - Health").GetComponent<Slider>();
         }
-        else if (gameObject.name == "Player Parent 3")
+        else if (gameObject.name == "Player3_Parent 3")
         {
             slider_PlayerHealth = GameObject.Find("Player 3 - Health").GetComponent<Slider>();
         }
-        else if (gameObject.name == "Player Parent 4")
+        else if (gameObject.name == "Player4_Parent 4")
         {
             slider_PlayerHealth = GameObject.Find("Player 4 - Health").GetComponent<Slider>();
         }
         cameraBehavior = GameObject.FindObjectOfType<CameraBehavior>();
     }
 
-    private void Update()
-    {
-        
-    }
 
     void OnTriggerEnter(Collider other)
     {
+        // Debug.Log("Col: " + other.tag, other.gameObject);
+        
         // if this player collides with the bullet
         if(other.gameObject.tag == "Bullet" && gameObject.tag != ("Wall"))
         {
+            // *NOTE
+            // You have to keep the player number at the end
+            // Name on the player parent
             string temp = gameObject.name;
             temp = temp.Substring(temp.Length-1);
 
-            print("TEMP VAR"+temp);
-
-            if(other.gameObject.GetComponent<Bullet>().ID != temp)
+            if (other.gameObject.GetComponent<Bullet>().ID != temp)
             {
+                print("_____SHOT_____");
+                //Debug.Log("PLAYER ID:" + temp, gameObject);
+                //Debug.Log("BULLET ID:" + other.gameObject.GetComponent<Bullet>().ID, other.gameObject);
+                //Debug.Log("Slider ->" + gameObject.name, slider_PlayerHealth);
+
+
                 // This means our bullet came from another player
+
+
+
                 slider_PlayerHealth.value -= other.GetComponent<Bullet>().Damage;
                 print("<color=green>Player " + other.GetComponent<Bullet>().ID + " did " + other.GetComponent<Bullet>().Damage + " Damage</color>");
 
-                print("Made it here");
-                if (slider_PlayerHealth.value <= 0.2f)
+                //print("Made it here");
+                if (slider_PlayerHealth.value <= 0.1f) //*was 0.2*
                 {
                     if (gameObject.name == "Player Parent 1")
                     {
-                        GameObject.Find("_GM").GetComponent<DialogueManagerWrapper>().p2Win = true;
+                        GameObject.Find("_GameManager").GetComponent<DialogueManagerWrapper>().p2Win = true;
                     }
                     else if (gameObject.name == "Player Parent 2")
                     {
-                        GameObject.Find("_GM").GetComponent<DialogueManagerWrapper>().p1Win = true;
+                        GameObject.Find("_GameManager").GetComponent<DialogueManagerWrapper>().p1Win = true;
                     }
                     cameraBehavior.players.Remove(transform);
                     Destroy(gameObject);
                 }
             }
+            else
+                print("No Dmg taken");
         }
-
-
-
     }
 }
