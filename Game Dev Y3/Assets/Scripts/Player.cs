@@ -14,11 +14,12 @@ public class Player : MonoBehaviour {
 	public float lowJumpMultiplier = 2f;
 	[Range(1, 10)]
 	public float jumpVelocity;
-
-	public Rigidbody rb;
+    Ray groundedRay;
+    public Rigidbody rb;
 
 	void Awake ()
 	{
+        groundedRay = new Ray(transform.position, -transform.up);
 		Rigidbody rb = GetComponent<Rigidbody>();
     }
 	
@@ -45,6 +46,17 @@ public class Player : MonoBehaviour {
             //transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
 
         }
+
+        // isGrounded detection
+
+        if (Physics.Raycast(groundedRay, 3))
+        {
+            print("Hit");
+            Debug.DrawRay(groundedRay.origin, groundedRay.direction * 3);
+            isGrounded = true;
+        }
+        else
+            isGrounded = false;
 
 		if (Input.GetButtonDown(AButton_PNum) && isGrounded)
 		{
@@ -77,10 +89,10 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionStay(Collision other)
 	{
-		if (other.gameObject.tag == "Floor" || other.gameObject.tag == "MovableObj")
-		{
-			isGrounded = true;
-		}
+		//if (other.gameObject.tag == "Floor" || other.gameObject.tag == "MovableObj")
+		//{
+		//	isGrounded = true;
+		//}
 	}
 
 	// void OnCollisioneExit(Collision other)
