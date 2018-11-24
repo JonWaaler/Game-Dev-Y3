@@ -14,6 +14,12 @@ public class GunBehavior : MonoBehaviour
     public int BulletsInMag = 15;       // The amount of bullets currently in mag
     public int MagazineCapacity = 15;   // How many bullets the mag can hold
 
+    [Header("SHOTGUN")]
+    [TextArea]
+    public string subtitle = "NOTE: Shotgun requires larger bullet pool";
+    public bool isShotGun = false;
+    public int minBullets = 4;
+    public int maxBullets = 10;
 
     [Header("Particle Effects")]
     public ParticleSystem Gun_Shot; //When a bullet is shot sparks
@@ -76,6 +82,36 @@ public class GunBehavior : MonoBehaviour
         if ((isShooting) && (t_RateOfFireTimer >= RateOfFire) && (BulletsInMag > 0) && !requestReload)
         {
             //Then search through bullet list and fire the first inactive
+            if (isShotGun)
+            {
+                int sprayAmount = Random.Range(minBullets, maxBullets);
+                int foundCounter = 0;
+                for (int i = 0; i < BULLET_POOL_SIZE; i++)
+                {
+                    if (Bullets[i].activeInHierarchy == false)
+                    {
+                        foundCounter++;
+                        Bullets[i].SetActive(true);
+                        Bullets[i].transform.position = Emitter.position;
+                        float randomAngle = Random.Range(Recoil, -Recoil);
+                        Bullets[i].transform.eulerAngles = gameObject.transform.parent.transform.eulerAngles - new Vector3(0, randomAngle, 0);
+                        Bullets[i].GetComponent<Bullet>().Damage = Damage;
+                        
+
+                        t_RateOfFireTimer = 0; // Reset ROF timer
+
+                        // Check if we've shot required bullets
+                        if (foundCounter >= sprayAmount)
+                        {
+                            BulletsInMag--;
+                            return;
+                        }
+                    }
+                }
+
+            }
+
+
             for (int i = 0; i < BULLET_POOL_SIZE; i++)
             {
                 if (Bullets[i].activeInHierarchy == false)

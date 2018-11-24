@@ -19667,6 +19667,53 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 918429860}
   m_CullTransparentMesh: 0
+--- !u!1001 &918777160
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1854359604}
+    m_Modifications:
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.1500001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114168400227467828, guid: 89591d1faefe5ea44bff69ce1b76fa19,
+        type: 2}
+      propertyPath: Slider_Reload
+      value: 
+      objectReference: {fileID: 991297822}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!4 &924079252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4071204548672600, guid: 3877bca67556d2b41bdfc0dee596631b,
@@ -28975,6 +29022,21 @@ Prefab:
       propertyPath: Slider_Reload
       value: 
       objectReference: {fileID: 1917947131}
+    - target: {fileID: 114966066932145218, guid: 4a6c50820a9506b4bb690a301bebc057,
+        type: 2}
+      propertyPath: BulletsInMag
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114966066932145218, guid: 4a6c50820a9506b4bb690a301bebc057,
+        type: 2}
+      propertyPath: MagazineCapacity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114966066932145218, guid: 4a6c50820a9506b4bb690a301bebc057,
+        type: 2}
+      propertyPath: Recoil
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6c50820a9506b4bb690a301bebc057, type: 2}
   m_IsPrefabAsset: 0
@@ -30125,6 +30187,10 @@ Prefab:
       propertyPath: BULLET_POOL_SIZE
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1202071612586702, guid: 626872ae3e854534ba00c7f95c162ae6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626872ae3e854534ba00c7f95c162ae6, type: 2}
   m_IsPrefabAsset: 0
@@ -30519,6 +30585,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4071204548672600, guid: 3877bca67556d2b41bdfc0dee596631b,
     type: 2}
   m_PrefabInternal: {fileID: 909439670}
+--- !u!4 &1722082886 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4263725595214892, guid: 89591d1faefe5ea44bff69ce1b76fa19,
+    type: 2}
+  m_PrefabInternal: {fileID: 918777160}
 --- !u!4 &1730816012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4823274447746416, guid: 02e6ee7286d6ae541a84f27e971e4d2a,
@@ -30899,6 +30970,7 @@ Transform:
   m_Children:
   - {fileID: 129786831}
   - {fileID: 386594348}
+  - {fileID: 1722082886}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 63.058002, z: 0}
