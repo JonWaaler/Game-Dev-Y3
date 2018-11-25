@@ -9,7 +9,6 @@ public class SoundManager : MonoBehaviour {
     public static SoundManager instance;
     public AudioMixerGroup MixerGroup;
     public Sounds[] sounds;
-
     private void Awake()
     {
         if (instance == null)
@@ -24,7 +23,6 @@ public class SoundManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-
         Debug.Log("SoundManager", gameObject);
 
         foreach (Sounds sound in sounds)
@@ -41,16 +39,12 @@ public class SoundManager : MonoBehaviour {
     {
         foreach (Sounds sound in sounds)
         {
-            if(sound.soundName == soundName)
+            if (sound.soundName == soundName)
             {
-                if (!sound)
-                {
-                    Debug.LogError("Sound Missign: " + soundName);
-                    return;
-                }
+
+
                 sound.source.volume = sound.volume;
                 sound.source.pitch = sound.pitch;
-
                 sound.source.Play();
                 return;
             }
@@ -59,6 +53,8 @@ public class SoundManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        
+
 		
 	}
 }

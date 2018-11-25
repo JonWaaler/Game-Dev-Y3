@@ -19720,6 +19720,16 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114168400227467828, guid: 89591d1faefe5ea44bff69ce1b76fa19,
+        type: 2}
+      propertyPath: Sound_GunShot
+      value: Shotgun Shot
+      objectReference: {fileID: 0}
+    - target: {fileID: 114168400227467828, guid: 89591d1faefe5ea44bff69ce1b76fa19,
+        type: 2}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1099083572}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89591d1faefe5ea44bff69ce1b76fa19, type: 2}
   m_IsPrefabAsset: 0
@@ -21045,9 +21055,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MixerGroup: {fileID: 0}
   sounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - soundName: Pistol Shot
+    clip: {fileID: 8300000, guid: afcb41eb472f44b428727eecfbd38802, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - soundName: Shotgun Shot
+    clip: {fileID: 8300000, guid: 0ef327cf2f86d864eb9c8dd07bfb5b68, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - soundName: Shotgun Reload
+    clip: {fileID: 8300000, guid: 7a228580a4263834185834a3d430457d, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - soundName: Sniper Shot
+    clip: {fileID: 8300000, guid: e445323fd5c53fb4bab57306059e7be6, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!1001 &1103329410
 Prefab:
   m_ObjectHideFlags: 0
@@ -29098,6 +29133,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114966066932145218, guid: 4a6c50820a9506b4bb690a301bebc057,
+        type: 2}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1099083572}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6c50820a9506b4bb690a301bebc057, type: 2}
   m_IsPrefabAsset: 0
@@ -30258,6 +30298,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114108544803654790, guid: 626872ae3e854534ba00c7f95c162ae6,
+        type: 2}
+      propertyPath: soundManager
+      value: 
+      objectReference: {fileID: 1099083572}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626872ae3e854534ba00c7f95c162ae6, type: 2}
   m_IsPrefabAsset: 0

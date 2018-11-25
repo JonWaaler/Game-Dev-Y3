@@ -13,6 +13,7 @@ public class GunBehavior : MonoBehaviour
     public float TimeToReload = 3f;
     public int BulletsInMag = 15;       // The amount of bullets currently in mag
     public int MagazineCapacity = 15;   // How many bullets the mag can hold
+    public string Sound_GunShot = "Sniper Shot";
 
     [Header("SHOTGUN")]
     [TextArea]
@@ -46,7 +47,7 @@ public class GunBehavior : MonoBehaviour
 
     public string RT_PNum;
     public string xButton_PNum;
-
+    public SoundManager soundManager;
     private string tempReloading_Str;
 
     void Start()
@@ -86,6 +87,7 @@ public class GunBehavior : MonoBehaviour
             {
                 int sprayAmount = Random.Range(minBullets, maxBullets);
                 int foundCounter = 0;
+                soundManager.Play(Sound_GunShot);
                 for (int i = 0; i < BULLET_POOL_SIZE; i++)
                 {
                     if (Bullets[i].activeInHierarchy == false)
@@ -96,7 +98,6 @@ public class GunBehavior : MonoBehaviour
                         float randomAngle = Random.Range(Recoil, -Recoil);
                         Bullets[i].transform.eulerAngles = gameObject.transform.parent.transform.eulerAngles - new Vector3(0, randomAngle, 0);
                         Bullets[i].GetComponent<Bullet>().Damage = Damage;
-                        
 
                         t_RateOfFireTimer = 0; // Reset ROF timer
 
@@ -117,7 +118,7 @@ public class GunBehavior : MonoBehaviour
                 if (Bullets[i].activeInHierarchy == false)
                 {
                     // Play shot sound
-                    Gun_Shot.Play();
+                    soundManager.Play(Sound_GunShot);
                     // Play shot anim
                     // Play shot particles
                     Bullets[i].SetActive(true);
@@ -141,6 +142,7 @@ public class GunBehavior : MonoBehaviour
 
             tempReloading_Str = xButton_PNum;
             //print("This: " + tempReloading_Str);
+            soundManager.Play("Shotgun Reload");
             requestReload = true;
         }
 
@@ -149,7 +151,6 @@ public class GunBehavior : MonoBehaviour
         if ((requestReload))
         {
             t_Reload += Time.deltaTime;
-
             // Reload UI
             Slider_Reload.gameObject.SetActive(true);
             Slider_Reload.value = Mathf.Lerp(0, 1, t_Reload / TimeToReload);
