@@ -52,6 +52,11 @@ public class WinDetection : MonoBehaviour {
                 // Spawn blood, set pos to bullet pos
                 ParticleSystem bloodInst = Instantiate<ParticleSystem>(Particles_Blood);
                 bloodInst.transform.position = other.transform.position;
+
+                // Debug Direction
+                Debug.DrawRay(bloodInst.transform.position, other.transform.position * 5, Color.yellow);
+
+                bloodInst.transform.rotation = other.transform.rotation;
                 Destroy(bloodInst, 35);
 
                 //print("Made it here");

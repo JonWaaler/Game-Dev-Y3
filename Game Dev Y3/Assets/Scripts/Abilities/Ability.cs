@@ -8,7 +8,6 @@ public class Ability : MonoBehaviour {
     public float abilCool = 1;
     public float distance = 10.0f;
     public float lerpSpeed = 20.0f;
-
     //    private WaitForSeconds lerpDuration = new WaitForSeconds(2);
     private float rollDistance = 10.0f;
     private float nextAbil; 
