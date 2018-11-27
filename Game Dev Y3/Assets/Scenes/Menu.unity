@@ -1880,6 +1880,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1481733763}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &737890220
@@ -4337,7 +4348,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1481733758}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0f20f57fcec56243b5f852418fabeb6, type: 3}
   m_Name: 
@@ -4351,6 +4362,7 @@ MonoBehaviour:
   pressA_03: {fileID: 792324343}
   pressA_04: {fileID: 1551691556}
   playerSelect: {fileID: 664424858}
+  mainMenu: {fileID: 49213291}
   grappleIMG_01: {fileID: 1150097384}
   orbIMG_01: {fileID: 1473478796}
   rollIMG_01: {fileID: 266926640}
@@ -4387,6 +4399,7 @@ MonoBehaviour:
   gunPointers_03: {fileID: 1073198652}
   charPointers_04: {fileID: 632188668}
   gunPointers_04: {fileID: 1427706075}
+  playerSettings: {fileID: 11400000, guid: 4fbb38b575ec03e4faee2e0e41bd5ad0, type: 2}
 --- !u!1 &1484319347
 GameObject:
   m_ObjectHideFlags: 0
