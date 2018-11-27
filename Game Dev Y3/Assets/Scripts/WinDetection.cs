@@ -70,6 +70,7 @@ public class WinDetection : MonoBehaviour {
                     {
                         GameObject.Find("_GameManager").GetComponent<DialogueManagerWrapper>().p1Win = true;
                     }
+                    // Update for 4 players
                     cameraBehavior.players.Remove(transform);
                     Destroy(gameObject);
                 }

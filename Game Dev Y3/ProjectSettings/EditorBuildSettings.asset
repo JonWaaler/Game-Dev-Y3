@@ -5,16 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: f73d2d44eb587a34585c466f7482becd
   - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/JonWaaler.unity
+    guid: 892f08a7a7bd0414bb351f08fb30fdc4
   - enabled: 1
-    path: Assets/Scenes/GameMap2 - JonWaaler.unity
-    guid: f3be1c6a776340f4a8c3e87f3c005d7e
+    path: Assets/Scenes/MitchellFukuzawa.unity
+    guid: dba4317645f5fd948815c9f1fe535067
   m_configObjects: {}

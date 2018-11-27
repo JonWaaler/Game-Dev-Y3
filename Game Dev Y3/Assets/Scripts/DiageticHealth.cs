@@ -43,13 +43,13 @@ public class DiageticHealth : MonoBehaviour {
     }
     public void DiageticUI_Update_3()
     {
-        diageticHealth_3 = UI_Health_3;
+        diageticHealth_3.value = UI_Health_3.value;
         if (UI_Health_3.value <= 0.1f)
             diageticHealth_3.gameObject.SetActive(false);
     }
     public void DiageticUI_Update_4()
     {
-        diageticHealth_4 = UI_Health_4;
+        diageticHealth_4.value = UI_Health_4.value;
         if (UI_Health_4.value <= 0.1f)
             diageticHealth_4.gameObject.SetActive(false);
     }
