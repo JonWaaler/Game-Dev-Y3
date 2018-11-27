@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class WinDetection : MonoBehaviour {
     private float health = 100F;
-    private Slider slider_PlayerHealth;
+    public Slider slider_PlayerHealth;
     private CameraBehavior cameraBehavior;
     public ParticleSystem Particles_Blood;
+    public PlayerSettings playerSettings;
     // Attach to the player.
     private void Start()
     {
@@ -28,6 +29,31 @@ public class WinDetection : MonoBehaviour {
             slider_PlayerHealth = GameObject.Find("Player 4 - Health").GetComponent<Slider>();
         }
         cameraBehavior = GameObject.FindObjectOfType<CameraBehavior>();
+    }
+
+    void OnDestroy()
+    {
+       // // DOESNT WORK
+       // if (playerSettings.playerActive_01 == false){
+//
+       //     slider_PlayerHealth.gameObject.SetActive(false);
+       //     print("Nig");
+//
+       // }
+       // if (playerSettings.playerActive_02 == false){
+       //     slider_PlayerHealth.gameObject.SetActive(false);
+       //     print("Nig");
+//
+       // }
+       // if (playerSettings.playerActive_03 == false){
+       //     slider_PlayerHealth.gameObject.SetActive(false);
+       //     print("Nig");
+//
+       // }
+       // if (playerSettings.playerActive_04 == false){
+       //     slider_PlayerHealth.gameObject.SetActive(false);
+       //     print("Nig");
+       // }
     }
 
 
@@ -54,9 +80,9 @@ public class WinDetection : MonoBehaviour {
                 bloodInst.transform.position = other.transform.position;
 
                 // Debug Direction
-                Debug.DrawRay(bloodInst.transform.position, other.transform.position * 5, Color.yellow);
+                //Debug.DrawRay(bloodInst.transform.position, other.transform.position * 5, Color.yellow);
 
-                bloodInst.transform.rotation = other.transform.rotation;
+                //bloodInst.transform.rotation = other.transform.rotation;
                 Destroy(bloodInst, 35);
 
                 //print("Made it here");

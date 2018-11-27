@@ -193,6 +193,11 @@ MonoBehaviour:
   TimeToReload: 0.5
   BulletsInMag: 13
   MagazineCapacity: 13
+  Sound_GunShot: Sniper Shot
+  subtitle: 'NOTE: Shotgun requires larger bullet pool'
+  isShotGun: 0
+  minBullets: 4
+  maxBullets: 10
   Gun_Shot: {fileID: 198596849265613488, guid: 45b1a9ef6177e79429dc87f9c5848c7f, type: 2}
   Gun_Smoke: {fileID: 0}
   isShooting: 0
@@ -203,8 +208,10 @@ MonoBehaviour:
   Emitter: {fileID: 4368613458735016}
   Slider_Reload: {fileID: 0}
   t_Reload: 0
-  RT_PNum: RT2
-  xButton_PNum: XButton2
+  RT_PNum: RT
+  xButton_PNum: XButton
+  soundManager: {fileID: 0}
+  playerSettings: {fileID: 11400000, guid: 4fbb38b575ec03e4faee2e0e41bd5ad0, type: 2}
 --- !u!120 &120375509125171008
 LineRenderer:
   m_ObjectHideFlags: 1

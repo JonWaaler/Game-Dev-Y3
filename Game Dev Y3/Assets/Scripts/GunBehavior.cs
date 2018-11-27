@@ -48,6 +48,7 @@ public class GunBehavior : MonoBehaviour
     public string RT_PNum;
     public string xButton_PNum;
     public SoundManager soundManager;
+    public PlayerSettings playerSettings;
     private string tempReloading_Str;
 
     void Start()
@@ -64,6 +65,8 @@ public class GunBehavior : MonoBehaviour
             myInstance.GetComponent<Bullet>().ID = RT_PNum.Substring(RT_PNum.Length-1);
 
         }
+
+
     }
 
 

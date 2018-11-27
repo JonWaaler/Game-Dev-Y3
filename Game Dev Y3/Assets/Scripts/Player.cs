@@ -7,11 +7,12 @@ public class Player : MonoBehaviour {
 	private float zvel;
 	private Vector3 inputVector;
 	public bool isGrounded;
-
 	public float speed;
 	public string H_LS_PNum, V_LS_PNum, H_RS_PNum, V_RS_PNum, AButton_PNum;
 	public float fallMultiplier = 2.5f;
 	public float lowJumpMultiplier = 2f;
+	public PlayerSettings playerSettings;
+
 	[Range(1, 10)]
 	public float jumpVelocity;
     Ray groundedRay;
@@ -20,6 +21,23 @@ public class Player : MonoBehaviour {
 	void Awake ()
 	{
 		Rigidbody rb = GetComponent<Rigidbody>();
+
+		if (playerSettings.playerActive_01 == false && gameObject.name == "Player1_Parent 1")
+		{
+			//player not active
+		}
+		if (playerSettings.playerActive_02 == false && gameObject.name == "Player2_Parent 2")
+		{
+			//player not active
+		}
+		if (playerSettings.playerActive_03 == false && gameObject.name == "Player3_Parent 3")
+		{
+			//player not active
+		}
+		if (playerSettings.playerActive_04 == false && gameObject.name == "Player4_Parent 4")
+		{
+			//player not active
+		}
     }
 	
 	// Update is called once per frame

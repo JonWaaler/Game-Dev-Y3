@@ -9,14 +9,49 @@ public class CameraBehavior : MonoBehaviour {
     public Vector3 offset;
     private Vector3 velocity;
     public float smoothTime = .5f;
+    public PlayerSettings playerSettings;
 
     [Header("Max/Min Ortho size")]
     public float maxSize = 30;
     public float minSize = 10;
 
-	// Use this for initialization
-	void Start () {
-		
+    private CameraBehavior cameraBehavior;
+
+	void Awake () {
+        cameraBehavior = GameObject.FindObjectOfType<CameraBehavior>();
+        int index = 0;
+        int tempCounter = 0;
+        if (playerSettings.playerActive_01 == false)
+        {
+            GameObject temp = players[index].gameObject;
+            cameraBehavior.players.Remove(players[index]);
+            Destroy(temp);
+            tempCounter++;
+        }
+        index++;
+        if (playerSettings.playerActive_02 == false)
+        {
+            GameObject temp = players[index - tempCounter].gameObject;
+            cameraBehavior.players.Remove(players[index]);
+            Destroy(temp);
+            tempCounter++;
+        }
+        index++;
+        if (playerSettings.playerActive_03 == false)
+        {
+            GameObject temp = players[index - tempCounter].gameObject;
+            cameraBehavior.players.Remove(players[index - tempCounter]);
+            Destroy(temp);
+            tempCounter++;
+        }
+        index++;
+        if (playerSettings.playerActive_04 == false)
+        {
+            GameObject temp = players[index - tempCounter].gameObject;
+            cameraBehavior.players.Remove(players[index - tempCounter]);
+            Destroy(temp);
+        }
+
 	}
 
     // Update is called once per frame
@@ -69,8 +104,6 @@ public class CameraBehavior : MonoBehaviour {
     }
 
     void Update () {
-
-
 
 
 
