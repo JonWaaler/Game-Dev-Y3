@@ -471,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4176602092705682}
   - component: {fileID: 95700617455076904}
+  - component: {fileID: 114413474563457232}
   m_Layer: 0
   m_Name: Dodge (1)
   m_TagString: Untagged
@@ -600,7 +601,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958888004881342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.66186, y: 0.4997034, z: -50.83767}
+  m_LocalPosition: {x: -37.698784, y: 0.50020313, z: -54.507217}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4327114903034130}
@@ -949,7 +950,7 @@ Animator:
   m_GameObject: {fileID: 1958888004881342}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 44e31d56669dbea42a52ffb6cb613cec, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1c329512891101a4088b08c6f6f2bb88, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -958,6 +959,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114413474563457232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958888004881342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01284ccc18089d64fb52f881869478eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137835643209604958
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -974,8 +986,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: f75422244b36d6447822506ce36cddf9, type: 2}
-  - {fileID: 2100002, guid: 44e31d56669dbea42a52ffb6cb613cec, type: 3}
-  - {fileID: 2100004, guid: 44e31d56669dbea42a52ffb6cb613cec, type: 3}
+  - {fileID: 2100000, guid: f75422244b36d6447822506ce36cddf9, type: 2}
+  - {fileID: 2100000, guid: f75422244b36d6447822506ce36cddf9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
