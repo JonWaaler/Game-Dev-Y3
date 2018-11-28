@@ -64,7 +64,7 @@ public class GunSettings : MonoBehaviour
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[0]);
-            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = new Vector3(0f, -0.5f, 0f);
             playerInst.transform.parent.GetComponent<Ability>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
@@ -106,7 +106,7 @@ public class GunSettings : MonoBehaviour
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[1]);
-            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = new Vector3(0f, -0.5f, 0f);
             playerInst.transform.parent.GetComponent<Ability>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
@@ -147,7 +147,7 @@ public class GunSettings : MonoBehaviour
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[2]);
-            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = new Vector3(0f, -0.5f, 0f);
             playerInst.transform.parent.GetComponent<Ability>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
@@ -188,7 +188,7 @@ public class GunSettings : MonoBehaviour
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[3]);
-            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = new Vector3(0f, -0.5f, 0f);
             playerInst.transform.parent.GetComponent<Ability>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
             playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
