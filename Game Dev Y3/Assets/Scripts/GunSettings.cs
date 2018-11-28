@@ -65,12 +65,20 @@ public class GunSettings : MonoBehaviour
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[0]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = true;
         }
         else if (playerSettings.characterSelection_01 == 1)
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[1]);
             playerInst.transform.SetParent(players[0]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = true;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = false;
 
         }
         else if (playerSettings.characterSelection_01 == 2)
@@ -78,6 +86,10 @@ public class GunSettings : MonoBehaviour
             GameObject playerInst = Instantiate<GameObject>(playersMesh[3]);
             playerInst.transform.SetParent(players[0]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = true;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = false;
 
         }
         else if (playerSettings.characterSelection_01 == 3)
@@ -85,7 +97,7 @@ public class GunSettings : MonoBehaviour
             GameObject playerInst = Instantiate<GameObject>(playersMesh[4]);
             playerInst.transform.SetParent(players[0]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
-
+            // clown boy
         }
 
 
@@ -95,18 +107,32 @@ public class GunSettings : MonoBehaviour
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[1]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = true;
         }
         else if (playerSettings.characterSelection_02 == 1)
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[1]);
             playerInst.transform.SetParent(players[1]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = true;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = false;
         }
         else if (playerSettings.characterSelection_02 == 2)
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[3]);
             playerInst.transform.SetParent(players[1]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = true;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = false;
         }
         else if (playerSettings.characterSelection_02 == 3)
         {
@@ -122,18 +148,32 @@ public class GunSettings : MonoBehaviour
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[2]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = true;
         }
         else if (playerSettings.characterSelection_03 == 1)
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[1]);
             playerInst.transform.SetParent(players[2]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = true;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = false;
         }
         else if (playerSettings.characterSelection_03 == 2)
         {
             GameObject playerInst = Instantiate<GameObject>(playersMesh[3]);
             playerInst.transform.SetParent(players[2]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = true;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = false;
         }
         else if (playerSettings.characterSelection_03 == 3)
         {
@@ -149,6 +189,10 @@ public class GunSettings : MonoBehaviour
             GameObject playerInst = Instantiate<GameObject>(playersMesh[0]);
             playerInst.transform.SetParent(players[3]);
             playerInst.transform.localPosition = Vector3.zero + Vector3.up * 0.5f;
+            playerInst.transform.parent.GetComponent<Ability>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability2>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability3>().enabled = false;
+            playerInst.transform.parent.GetComponent<Ability4>().enabled = true;
         }
         else if (playerSettings.characterSelection_04 == 1)
         {

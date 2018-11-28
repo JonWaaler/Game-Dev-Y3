@@ -369,9 +369,9 @@ InputManager:
     dead: 0.001
     sensitivity: 1
     snap: 0
-    invert: 1
-    type: 2
-    axis: 2
+    invert: 0
+    type: 0
+    axis: 0
     joyNum: 3
   - serializedVersion: 3
     m_Name: AButton4
@@ -385,9 +385,9 @@ InputManager:
     dead: 0.001
     sensitivity: 1
     snap: 0
-    invert: 1
-    type: 2
-    axis: 2
+    invert: 0
+    type: 0
+    axis: 0
     joyNum: 4
   - serializedVersion: 3
     m_Name: BButton3
@@ -463,7 +463,7 @@ InputManager:
     altPositiveButton: 
     gravity: 1000
     dead: 0
-    sensitivity: 0
+    sensitivity: 1000
     snap: 0
     invert: 0
     type: 0
@@ -477,9 +477,9 @@ InputManager:
     positiveButton: joystick 4 button 3
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
+    gravity: 1000
     dead: 0
-    sensitivity: 0
+    sensitivity: 1000
     snap: 0
     invert: 0
     type: 0
