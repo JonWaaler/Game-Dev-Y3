@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleToRun : MonoBehaviour {
-
+public class DodgeAnimations : MonoBehaviour {
     Animator animator;
-    public float InputX;
-    public float InputY;
     private float PNum;
 
 	// Use this for initialization
@@ -25,16 +22,15 @@ public class IdleToRun : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        InputY = Input.GetAxis("V_LStick" + PNum);
-        InputX = Input.GetAxis("H_LStick" + PNum);
-        animator.SetFloat("InputX", InputY);
-        animator.SetFloat("InputZ", InputX);
-        if (Input.GetButtonDown("RB" + PNum))
+        animator.SetFloat("InputX", Input.GetAxis("V_LStick" + PNum));
+        animator.SetFloat("InputZ", Input.GetAxis("H_LStick" + PNum));
+
+        if (Input.GetButtonDown("BButton" + PNum))
         {
             //switch animation
-            animator.SetBool("IsGrapple", true);
+            animator.SetBool("IsDodge", true);
         }
         else
-            animator.SetBool("IsGrapple", false);
+            animator.SetBool("IsDodge", false);
     }
 }

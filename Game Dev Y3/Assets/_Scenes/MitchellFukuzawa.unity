@@ -30532,48 +30532,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 780611a67e8e941a2b3aa96e5915a793,
     type: 2}
   m_PrefabInternal: {fileID: 328880425}
---- !u!1001 &1505131657
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4593908358997920, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-      propertyPath: m_RootOrder
-      value: 18
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!1 &1514217467
 GameObject:
   m_ObjectHideFlags: 0
@@ -31602,8 +31560,8 @@ MonoBehaviour:
   playersMesh:
   - {fileID: 1017287885113860, guid: 9f0aeba40c3ad1e4680b971121d9a461, type: 2}
   - {fileID: 1805361235938644, guid: f799958a9ab9d364b9ca088ccb4767e5, type: 2}
-  - {fileID: 1714588105864212, guid: 1d0888f0e1deab64d9c144ca10356be1, type: 2}
-  - {fileID: 1714588105864212, guid: 1d0888f0e1deab64d9c144ca10356be1, type: 2}
+  - {fileID: 1958888004881342, guid: 33bb36c6cc92bc24fb4b36a1b4156468, type: 2}
+  - {fileID: 1958888004881342, guid: 33bb36c6cc92bc24fb4b36a1b4156468, type: 2}
   playerSettings: {fileID: 11400000, guid: 4fbb38b575ec03e4faee2e0e41bd5ad0, type: 2}
 --- !u!1001 &1597330752
 Prefab:

@@ -128,8 +128,8 @@ public class UI_Controller : MonoBehaviour
 			if (Input.GetAxisRaw("H_LStick1") == 0)
 				axisInUse_01 = false;
 
-			guncounter_01 = (guncounter_01 > 3) ? 0 : guncounter_01;
-			guncounter_01 = (guncounter_01 < 0) ? 3 : guncounter_01;
+			guncounter_01 = (guncounter_01 > 2) ? 0 : guncounter_01;
+			guncounter_01 = (guncounter_01 < 0) ? 2 : guncounter_01;
 
 			if (guncounter_01 == 0)
 				pistolIMG_01.SetActive(true);
@@ -191,8 +191,8 @@ public class UI_Controller : MonoBehaviour
 			if (Input.GetAxisRaw("H_LStick2") == 0)
 				axisInUse_02 = false;
 
-			guncounter_02 = (guncounter_02 > 3) ? 0 : guncounter_02;
-			guncounter_02 = (guncounter_02 < 0) ? 3 : guncounter_02;
+			guncounter_02 = (guncounter_02 > 2) ? 0 : guncounter_02;
+			guncounter_02 = (guncounter_02 < 0) ? 2 : guncounter_02;
 
 			if (guncounter_02 == 0)
 				pistolIMG_02.SetActive(true);
@@ -237,8 +237,8 @@ public class UI_Controller : MonoBehaviour
 			if (Input.GetAxisRaw("H_LStick3") == 0)
 				axisInUse_03 = false;
 
-			guncounter_03 = (guncounter_03 > 3) ? 0 : guncounter_03;
-			guncounter_03 = (guncounter_03 < 0) ? 3 : guncounter_03;
+			guncounter_03 = (guncounter_03 > 2) ? 0 : guncounter_03;
+			guncounter_03 = (guncounter_03 < 0) ? 2 : guncounter_03;
 
 			if (guncounter_03 == 0)
 				pistolIMG_03.SetActive(true);
@@ -283,8 +283,8 @@ public class UI_Controller : MonoBehaviour
 			if (Input.GetAxisRaw("H_LStick4") == 0)
 				axisInUse_04 = false;
 
-			guncounter_04 = (guncounter_04 > 3) ? 0 : guncounter_04;
-			guncounter_04 = (guncounter_04 < 0) ? 3 : guncounter_04;
+			guncounter_04 = (guncounter_04 > 2) ? 0 : guncounter_04;
+			guncounter_04 = (guncounter_04 < 0) ? 2 : guncounter_04;
 
 			if (guncounter_04 == 0)
 				pistolIMG_04.SetActive(true);
