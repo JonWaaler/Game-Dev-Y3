@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WinDetection : MonoBehaviour {
-    private float health = 100F;
+    public float health = 100F;
     public Slider slider_PlayerHealth;
     private CameraBehavior cameraBehavior;
     public ParticleSystem Particles_Blood;
@@ -33,27 +33,7 @@ public class WinDetection : MonoBehaviour {
 
     void OnDestroy()
     {
-       // // DOESNT WORK
-       // if (playerSettings.playerActive_01 == false){
-//
-       //     slider_PlayerHealth.gameObject.SetActive(false);
-       //     print("Nig");
-//
-       // }
-       // if (playerSettings.playerActive_02 == false){
-       //     slider_PlayerHealth.gameObject.SetActive(false);
-       //     print("Nig");
-//
-       // }
-       // if (playerSettings.playerActive_03 == false){
-       //     slider_PlayerHealth.gameObject.SetActive(false);
-       //     print("Nig");
-//
-       // }
-       // if (playerSettings.playerActive_04 == false){
-       //     slider_PlayerHealth.gameObject.SetActive(false);
-       //     print("Nig");
-       // }
+
     }
 
 

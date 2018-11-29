@@ -29,9 +29,7 @@ public class GameManager_UI : MonoBehaviour {
 
             if(t_delay > delay){
                 //Restart_Canvus.SetActive(true);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
-
+                SceneManager.LoadScene(0);
                 t_delay = 0;
             }
         }
