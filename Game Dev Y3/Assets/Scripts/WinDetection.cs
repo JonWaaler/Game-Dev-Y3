@@ -9,6 +9,7 @@ public class WinDetection : MonoBehaviour {
     private CameraBehavior cameraBehavior;
     public ParticleSystem Particles_Blood;
     public PlayerSettings playerSettings;
+    public bool isInvincible = false;
     // Attach to the player.
     private void Start()
     {
@@ -40,9 +41,11 @@ public class WinDetection : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         // Debug.Log("Col: " + other.tag, other.gameObject);
-        
+
         // if this player collides with the bullet
-        if(other.gameObject.tag == "Bullet" && gameObject.tag != ("Wall"))
+        if (!isInvincible)
+        {
+            if(other.gameObject.tag == "Bullet" && gameObject.tag != ("Wall"))
         {
             // *NOTE
             // You have to keep the player number at the end
@@ -83,5 +86,7 @@ public class WinDetection : MonoBehaviour {
             }
             
         }
+        }
+
     }
 }

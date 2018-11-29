@@ -7,10 +7,32 @@ public class SoundManager : MonoBehaviour {
 
 
     public static SoundManager instance;
-    public AudioMixerGroup MixerGroup;
+    //public AudioMixerGroup MixerGroup;
+    //
+    //[FMODUnity.EventRef]
+    //public string PistolShot;
+    //FMOD.Studio.EventInstance f_PistolShot;
+    //
+    //[FMODUnity.EventRef]
+    //public string ShotgunShot;
+    //FMOD.Studio.EventInstance f_ShotgunShot;
+    //
+    //[FMODUnity.EventRef]
+    //public string SniperShot;
+    //FMOD.Studio.EventInstance f_SniperShot;
+
     public Sounds[] sounds;
+
+
     private void Awake()
     {
+        //f_PistolShot = FMODUnity.RuntimeManager.CreateInstance(PistolShot);
+        //f_PistolShot.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        //f_ShotgunShot = FMODUnity.RuntimeManager.CreateInstance(ShotgunShot);
+        //f_ShotgunShot.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        //f_SniperShot = FMODUnity.RuntimeManager.CreateInstance(SniperShot);
+        //f_SniperShot.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+
         if (instance == null)
         {
             instance = this;
@@ -23,38 +45,73 @@ public class SoundManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Debug.Log("SoundManager", gameObject);
-
-        foreach (Sounds sound in sounds)
+        // Initialize all the sounds
+        foreach (var sound in sounds)
         {
-            sound.source = gameObject.AddComponent<AudioSource>();
-            sound.source.clip = sound.clip;
-            sound.source.loop = sound.loop;
-            sound.source.outputAudioMixerGroup = MixerGroup;
+            sound.EventName = FMODUnity.RuntimeManager.CreateInstance(sound.SoundName);
+            sound.EventName.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         }
 	}
 	
-
-    public void Play(string soundName)
+    public void SetPitch(string soundName, float newPitch)
     {
         foreach (Sounds sound in sounds)
         {
-            if (sound.soundName == soundName)
+            if (sound.SoundName == soundName)
             {
-
-
-                sound.source.volume = sound.volume;
-                sound.source.pitch = sound.pitch;
-                sound.source.Play();
+                sound.EventName.setPitch(newPitch);
                 return;
             }
         }
     }
 
-	// Update is called once per frame
-	void Update () {
-        
+    public float GetPitch(string soundName)
+    {
+        soundName = "event:/" + soundName;
+        foreach (Sounds sound in sounds)
+        {
+            if (sound.SoundName == soundName)
+            {
+                float pitch;
+                sound.EventName.getPitch(out pitch, out pitch);
+                print("Recieved Pitch:" + pitch);
+                return pitch;
+            }
+        }
+        return 0;
+    }
 
-		
-	}
+    public void SetVolume_One(string soundName, float newVolume)
+    {
+        soundName = "event:/" + soundName;
+        foreach (Sounds sound in sounds)
+        {
+            if (sound.SoundName == soundName)
+            {
+                sound.EventName.setVolume(newVolume);
+                return;
+            }
+        }
+    }
+
+    public void SetVolume_ALL(float newVolume)
+    {
+        foreach (Sounds sound in sounds)
+        {
+            sound.EventName.setVolume(newVolume);
+        }
+    }
+
+    public void Play(string soundName)
+    {
+        soundName = "event:/" + soundName;
+        foreach (Sounds sound in sounds)
+        {
+            if (sound.SoundName == soundName)
+            {
+                sound.EventName.start();
+                return;
+            }
+        }
+    }
 }

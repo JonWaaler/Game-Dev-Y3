@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GunBehavior : MonoBehaviour
 {
-
     [Header("Gun Firing Options")]
     public float RateOfFire = 0.5f;
     public float t_RateOfFireTimer = 0.5f;  // Should keep the timer init to  the val of Rate
@@ -65,8 +64,6 @@ public class GunBehavior : MonoBehaviour
             myInstance.GetComponent<Bullet>().ID = RT_PNum.Substring(RT_PNum.Length-1);
 
         }
-
-
     }
 
 
@@ -121,6 +118,7 @@ public class GunBehavior : MonoBehaviour
                 if (Bullets[i].activeInHierarchy == false)
                 {
                     // Play shot sound
+                    
                     soundManager.Play(Sound_GunShot);
                     // Play shot anim
                     // Play shot particles

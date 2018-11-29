@@ -193,7 +193,7 @@ MonoBehaviour:
   TimeToReload: 0.5
   BulletsInMag: 13
   MagazineCapacity: 13
-  Sound_GunShot: Sniper Shot
+  Sound_GunShot: Pistol Shot
   subtitle: 'NOTE: Shotgun requires larger bullet pool'
   isShotGun: 0
   minBullets: 4
