@@ -68,15 +68,15 @@ public class WinDetection : MonoBehaviour {
                 //print("Made it here");
                 if (slider_PlayerHealth.value <= 0.1f) //*was 0.2*
                 {
-                    if (gameObject.name == "Player Parent 1")
-                    {
-                        GameObject.Find("_GameManager").GetComponent<DialogueManagerWrapper>().p2Win = true;
-                    }
-                    else if (gameObject.name == "Player Parent 2")
-                    {
-                        GameObject.Find("_GameManager").GetComponent<DialogueManagerWrapper>().p1Win = true;
-                    }
-                    // Update for 4 players
+                    //if (gameObject.name == "Player Parent 1")
+                    //{
+                    //    GameObject.Find("_GameManager").GetComponent<DialogueManagerWrapper>().p2Win = true;
+                    //}
+                    //else if (gameObject.name == "Player Parent 2")
+                    //{
+                    //    GameObject.Find("_GameManager").GetComponent<DialogueManagerWrapper>().p1Win = true;
+                    //}
+                    
                     cameraBehavior.players.Remove(transform);
                     Destroy(gameObject);
                 }
